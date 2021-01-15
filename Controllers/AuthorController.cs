@@ -30,7 +30,7 @@ namespace JwtExample.Controllers
             {
                 //Tao 1 lop khoa bao mat moi
                 var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("supperSecrectKey@345"));
-                //Tao bien thong tin dang nhap
+                //Tao bien thong tin dang nhap(xac thuc)= khoa bao mat + thuat toan bam
                 var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 
                 //Tao ma tuy chon thong bao de chung ta tao bao mat token

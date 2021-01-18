@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TMT\\source\\repos\\JwtExample\\JwtExample\\JwtExample.csproj": {}
+    "C:\\Users\\LongPham\\Desktop\\Project\\Author-Login\\JwtExample.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TMT\\source\\repos\\JwtExample\\JwtExample\\JwtExample.csproj": {
+    "C:\\Users\\LongPham\\Desktop\\Project\\Author-Login\\JwtExample.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TMT\\source\\repos\\JwtExample\\JwtExample\\JwtExample.csproj",
+        "projectUniqueName": "C:\\Users\\LongPham\\Desktop\\Project\\Author-Login\\JwtExample.csproj",
         "projectName": "JwtExample",
-        "projectPath": "C:\\Users\\TMT\\source\\repos\\JwtExample\\JwtExample\\JwtExample.csproj",
-        "packagesPath": "C:\\Users\\TMT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TMT\\source\\repos\\JwtExample\\JwtExample\\obj\\",
+        "projectPath": "C:\\Users\\LongPham\\Desktop\\Project\\Author-Login\\JwtExample.csproj",
+        "packagesPath": "C:\\Users\\LongPham\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LongPham\\Desktop\\Project\\Author-Login\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\TMT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LongPham\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

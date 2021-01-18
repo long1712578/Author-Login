@@ -1,4 +1,9 @@
-﻿using JwtExample.ViewModels;
+﻿using AutoMapper;
+using JwtExample.Entities;
+using JwtExample.Entities.Models;
+using JwtExample.Entities.ViewModels;
+using JwtExample.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -10,11 +15,21 @@ using System.Threading.Tasks;
 
 namespace JwtExample.Controllers
 {
+   
     [Route("api/Author")]
     [ApiController]
     public class AuthorController : ControllerBase
     {
-        [HttpPost]
+        private readonly UserManager<User> _manager;
+        private readonly IMapper _mapper;
+
+        public AuthorController(UserManager<User> manager,IMapper mapper)
+        {
+            _manager = manager;
+            _mapper = mapper;
+        }
+    
+        [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest req)
         {
             if (req == null)
@@ -45,6 +60,28 @@ namespace JwtExample.Controllers
                 return Ok(new { Token = tokenString });
             }
             return Unauthorized();
+        }
+        [HttpPost("Registration")]
+        public async Task<IActionResult> Register([FromBody] RegisterRequest req)
+        {
+            if (req == null)
+            {
+                return BadRequest("User no value");
+            }
+            if (req.Password != req.ConfirmPassword)
+            {
+                return BadRequest("Password no like passwordConfirm error");
+            }
+            //Map data from req to user
+            var myUser = _mapper.Map<User>(req);
+            //Create Password
+            var result = _manager.CreateAsync(myUser, req.Password);
+            if (result==null)
+            {
+                return BadRequest("Create account error");
+            }
+            await _manager.AddToRoleAsync(myUser, "Viewer");
+            return StatusCode(201);
         }
     }
 }
